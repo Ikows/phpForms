@@ -78,25 +78,25 @@ if ($_POST) {
 		<form action="index.php" method="post">
 			<div>
 				<label for="name">Nom :</label>
-				<input  type="text" name="user_name" id="name" placeholder="Nom" value="<?php if(isset($_POST['user_name'])) echo $_POST['user_name']; ?>">
+				<input required type="text" name="user_name" id="name" placeholder="Nom" value="<?php if(isset($_POST['user_name'])) echo $_POST['user_name']; ?>">
 				<p style="color: red"><?php if (isset($errors['name1']))  echo $errors['name1'];   ?></p>
 				<p style="color: red"><?php if (isset($errors['name2'])) echo $errors['name2'];  ?></p>
 			</div>
 			<div>
 				<label for="firstname">Prénom :</label>
-				<input  type="text" name="user_firstname" id="firstname" placeholder="Prénom" value="<?php if(isset($_POST['user_firstname'])) echo $_POST['user_firstname']; ?>">
+				<input required type="text" name="user_firstname" id="firstname" placeholder="Prénom" value="<?php if(isset($_POST['user_firstname'])) echo $_POST['user_firstname']; ?>">
 				<p style="color: red"><?php if (isset($errors['firstname1']))  echo $errors['firstname1'];   ?></p>
 				<p style="color: red"><?php if (isset($errors['firstname2'])) echo $errors['firstname2'];  ?></p>
 			</div>
 			<div>
 				<label for="mail">E-mail :</label>
-				<input  type="email" name="user_mail" id="mail" placeholder="E-mail" value="<?php if(isset($_POST['user_mail'])) echo $_POST['user_mail']; ?>">
+				<input required type="email" name="user_mail" id="mail" placeholder="E-mail" value="<?php if(isset($_POST['user_mail'])) echo $_POST['user_mail']; ?>">
 				<p style="color: red"><?php if (isset($errors['mail1']))  echo $errors['mail1'];   ?></p>
 				<p style="color: red"><?php if (isset($errors['mail2'])) echo $errors['mail2'];  ?></p>
 			</div>
 			<div>
 				<label for="phone">Téléphone :</label>
-				<input  type="tel" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" name="user_phone" id="phone" placeholder="Telephone" value="<?php if(isset($_POST['user_phone'])) echo $_POST['user_phone']; ?>">
+				<input required type="tel" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" name="user_phone" id="phone" placeholder="Telephone" value="<?php if(isset($_POST['user_phone'])) echo $_POST['user_phone']; ?>">
 				<p style="color: red"><?php if (isset($errors['phone1']))  echo $errors['phone1'];   ?></p>
 			</div>
 			<div>
@@ -109,7 +109,7 @@ if ($_POST) {
 			</div>
 			<div>
 				<label for="msg">Message :</label>
-				<textarea   id="msg" name="user_message" placeholder="Entrez votre texte ici"><?php if(isset($_POST['user_name'])) echo $_POST['user_name']; ?></textarea>
+				<textarea  required id="msg" name="user_message" placeholder="Entrez votre texte ici"><?php if(isset($_POST['user_name'])) echo $_POST['user_name']; ?></textarea>
 				<p style="color: red"><?php if (isset($errors['message1']))  echo $errors['message1'];   ?></p>
 			</div>
 			<div class="button">
