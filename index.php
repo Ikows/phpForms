@@ -4,27 +4,31 @@ $errors = [];
 
 if ($_POST) {
 
+
+	//Validation du Nom
 	if (empty($_POST['user_name']))
-	{
-		
+	{		
 		$errors['name1'] = "Votre nom est requis";
 	}
 
-	if (strlen($_POST['user_name']) < 3)
+	if (!preg_match("/^[a-zA-Z ]*$/",$_POST['user_name']))
 	{
 		$errors['name2'] = "Votre nom doit avoir plus de 2 lettres";
 	}
 
+	// Validation du prénom
 	if (empty($_POST['user_firstname']))
 	{
 		$errors['firstname1'] = "Votre prénom est requis";
 	}
 
-	if (strlen($_POST['user_firstname']) < 3)
+	if (!preg_match("/^[a-zA-Z ]*$/",$_POST['user_firstname']))
 	{
 		$errors['firstname2'] = "Votre prénom doit avoir au moins 2 lettres";
 	}
 
+
+	// Validation de l'email
 	if (empty($_POST['user_mail']))
 	{
 		$errors['mail1'] = "Votre mail est requis";
@@ -35,11 +39,13 @@ if ($_POST) {
 		$errors['mail2'] = "Le mail n'a pas le bon format";
 	}
 
+	// Validation du Telephone
 	if (empty($_POST['user_phone']))
 	{
 		$errors['phone1'] = "Vous devez indiquer votre numéro";
 	}
 
+	// Validation du Message
 	if (empty($_POST['user_message']))
 	{
 		$errors['message1'] = "Vous devez écrire un message";
